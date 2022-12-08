@@ -33,8 +33,8 @@ const Signup3 = () => {
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem('NexisToken', data.token)
-                toast("Login successfull!")
-                navigate('/home')
+                toast("Register successfull!")
+                navigate('/login')
 
             })
             .catch(error => console.error(error))
