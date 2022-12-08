@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup3 = () => {
@@ -11,7 +12,7 @@ const Signup3 = () => {
         const password = event.target.password.value
         info.password = password;
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://nexis-server-rho.vercel.app/user', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -20,12 +21,23 @@ const Signup3 = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
 
-                navigate('/home')
+                jwt(info.email)
             })
             .catch(e => console.log(e))
 
+    }
+    const jwt = (email) => {
+        console.log(email)
+        fetch(`https://nexis-server-rho.vercel.app/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem('NexisToken', data.token)
+                toast("Login successfull!")
+                navigate('/home')
+
+            })
+            .catch(error => console.error(error))
     }
     console.log(info)
     return (
@@ -37,7 +49,7 @@ const Signup3 = () => {
                     <span className="label-text-alt">Your password must be 8 character</span>
 
                 </label>
-                <button type='submit' className='btn btn-primary lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Sign Up </button>
+                <button type='submit' className='btn bg-blue-700 lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Sign Up </button>
 
             </form>
             <div className='flex justify-between px-4 '>

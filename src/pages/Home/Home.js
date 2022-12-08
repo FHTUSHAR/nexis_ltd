@@ -6,7 +6,11 @@ import img from '../../images/nav.png'
 const Home = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/loginuser')
+        fetch('https://nexis-server-rho.vercel.app/loginuser', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('NexisToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setUsers(data)

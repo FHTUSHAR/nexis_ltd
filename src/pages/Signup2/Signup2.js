@@ -23,7 +23,7 @@ const Signup2 = () => {
             <form className='p-5' onSubmit={handleSubmit}>
                 <input type="text" placeholder="+880" name='phone' className="input border-0 border-b-2 rounded-none border-indigo-500 w-full my-8" required />
                 <input type="text" placeholder="Type Email Address" name='email' className="input border-0 border-b-2 rounded-none border-indigo-500 w-full mb-4 " required />
-                <button type='submit' className='btn btn-primary lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Next Step <span className='ml-2'><FaArrowRight /></span></button>
+                <button type='submit' className='btn bg-blue-700 lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Next Step <span className='ml-2'><FaArrowRight /></span></button>
 
             </form >
             <div className='flex justify-between px-4'>

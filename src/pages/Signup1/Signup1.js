@@ -25,7 +25,7 @@ const Signup1 = () => {
             <form className='p-5' onSubmit={handleSubmit}>
                 <input type="text" placeholder="Type First Name" name='firstname' className="input border-0 border-b-2 rounded-none border-indigo-500 w-full my-8" required />
                 <input type="text" placeholder="Type Last Name" name='lastname' className="input border-0 border-b-2 rounded-none border-indigo-500 w-full mb-4 " required />
-                <button type='submit' className='btn btn-primary lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Next Step <span className='ml-2'><FaArrowRight /></span></button>
+                <button type='submit' className='btn bg-blue-700 lg:mt-7 px-8 flex text-center lg:ml-36 py-0 rounded-full lg:mb-24 lg:mt-28'>Next Step <span className='ml-2'><FaArrowRight /></span></button>
 
             </form>
             <p className='text-center mb-4'>Already have an account? <span className='text-primary font-semibold'><Link to={'/login'}>LOGIN HERE</Link></span></p>
